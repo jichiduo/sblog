@@ -1,3 +1,3 @@
-# sblog
+# Simple Blog 
 
-##This is a demo project build by Laravel5.5
+This is a demo project build by Laravel5.5
