@@ -18,7 +18,7 @@
             <br>
 
             {{ Form::label('body', 'Post Body') }}
-            {{ Form::textarea('body', null, array('class' => 'form-control')) }}
+            {{ Form::textarea('body', null, array('class' => 'form-control' , 'id' => 'post_body')) }}
             <br>
 
             {{ Form::submit('Create Post', array('class' => 'btn btn-success btn-lg btn-block')) }}
@@ -26,5 +26,11 @@
         </div>
         </div>
     </div>
-
+<script>
+  $(document).ready(function() {
+            $('#post_body').summernote({
+              height:300,
+            });
+        });    
+</script>
 @endsection

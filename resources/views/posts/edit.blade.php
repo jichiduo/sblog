@@ -16,7 +16,6 @@
 
             {{ Form::label('body', 'Post Body') }}
             {{ Form::textarea('body', null, array('class' => 'form-control', 'id' => 'post_body')) }}<br>
-
             {{ Form::submit('Save', array('class' => 'btn btn-primary')) }}
 
             {{ Form::close() }}

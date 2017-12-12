@@ -57,6 +57,7 @@ h6, .h6 {
 .blog-nav-item:focus {
   color: #fff;
   text-decoration: none;
+  font-weight: bold;
 }
 .blog-nav-item-right {
   position: absolute;
@@ -74,6 +75,7 @@ h6, .h6 {
 /* Active state gets a caret at the bottom */
 .blog-nav .active {
   color: #fff;
+  font-weight: bold;
 }
 
 .nav-brand {

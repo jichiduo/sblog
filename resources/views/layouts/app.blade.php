@@ -5,12 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <meta name="author" content="d1.xyz">
+    <meta name="author" content="Ev173.com">
     <link rel="icon" href="/favicon.ico">
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-
-    <title>Blog Template for Bootstrap</title>
+    <meta http-equiv='Content-Type' content='text/html; charset=utf-8' /> 
+    <title>Ev173.com</title>
 
     <!-- Bootstrap core CSS -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
@@ -30,12 +30,7 @@
       <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-    <!-- Scripts -->
-    <script>
-        window.Laravel = {!! json_encode([
-            'csrfToken' => csrf_token(),
-        ]) !!};
-    </script>
+
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
     <!-- Bootstrap core JavaScript
@@ -48,6 +43,7 @@
     <script src="/js/ie10-viewport-bug-workaround.js"></script>
     <script src="https://use.fontawesome.com/9712be8772.js"></script>
     <!-- include summernote css/js-->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.8/summernote.css" rel="stylesheet">
     <script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.8/summernote.js"></script>
   </head>
@@ -59,21 +55,22 @@
             <div class="blog-masthead navbar-fixed-top">
               <div class="container-fluid">
                 <div class="navbar-header">
-                  <a class="nav-brand" href="/">EV173<sub><small>.com</small></sub></a>
+                  <a class="nav-brand" href="/">Ev173<sub><small>.com</small></sub></a>
                 </div>
                 <nav class="blog-nav">
-                  <a class="blog-nav-item active" href="#"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Home</a>
-                  <a class="blog-nav-item" href="#">New features</a>
-                  <a class="blog-nav-item" href="#">Press</a>
-                  <a class="blog-nav-item" href="#">New hires</a>
-                  <a class="blog-nav-item" href="#">About</a>
+                  <a class="blog-nav-item active" href="/"><i class="fa fa-home fa-lg" aria-hidden="true"></i> 首页</a>
+                  <a class="blog-nav-item" href="#"><i class="fa fa-newspaper-o" aria-hidden="true"></i> 资讯</a>
+                  <a class="blog-nav-item" href="#"><i class="fa fa-car" aria-hidden="true"></i> 车型</a>
+                  <a class="blog-nav-item" href="#"><i class="fa fa-flag" aria-hidden="true"></i> 厂商</a>
+                  <a class="blog-nav-item" href="#"><i class="fa fa-comments" aria-hidden="true"></i> 论坛</a>
+                  <a class="blog-nav-item" href="#"><i class="fa fa-info" aria-hidden="true"></i> 关于</a>
                   <div class="blog-nav-item-right">
                         <!-- Authentication Links -->
                         @if (Auth::guest())
                             <a class="blog-nav-item" href="{{ route('login') }}">Login</a>
                             <a class="blog-nav-item" href="{{ route('register') }}">Register</a>
                         @else
-                            <span class="glyphicon glyphicon-user" aria-hidden="true"></span> {{ Auth::user()->name }}  
+                            <i class="fa fa-user-circle" aria-hidden="true"></i>  {{ Auth::user()->name }}  
 
                             <a class="blog-nav-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                             (Logout)
