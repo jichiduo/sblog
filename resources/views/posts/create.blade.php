@@ -27,10 +27,31 @@
         </div>
     </div>
 <script>
-  $(document).ready(function() {
-            $('#post_body').summernote({
-              height:300,
-            });
-        });    
+$(document).ready(function() {
+    $('#post_body').summernote({
+        height: 300,
+        toolbar: [
+            // [groupName, [list of button]]
+            ['style', ['bold', 'italic', 'underline', 'clear']],
+            ['font', ['strikethrough', 'superscript', 'subscript']],
+            ['fontsize', ['fontsize']],
+            ['color', ['color']],
+            ['para', ['ul', 'ol', 'paragraph']],
+            ['height', ['height']],
+            ['insert', ['link', 'picture', 'video','hr']],
+        ],
+        popover: {
+            image: [
+                ['imagesize', ['imageSize100', 'imageSize50', 'imageSize25']],
+                ['float', ['floatLeft', 'floatRight', 'floatNone']],
+                ['remove', ['removeMedia']]
+            ],
+            link: [
+                ['link', ['linkDialogShow', 'unlink']]
+            ]
+        }
+    });
+    $('.dropdown-toggle').dropdown();
+});
 </script>
 @endsection

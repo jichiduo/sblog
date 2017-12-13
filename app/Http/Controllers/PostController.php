@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Post;
+use Purifier;
 class PostController extends Controller
 {
     public function __construct()
@@ -53,7 +54,7 @@ class PostController extends Controller
         //save img
         $dom = new \DomDocument();
         libxml_use_internal_errors(true);
-        $dom->loadHtml(mb_convert_encoding($body, 'UTF-8'), LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);    
+        $dom->loadHtml(mb_convert_encoding($body, 'HTML-ENTITIES', 'UTF-8'), LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);  //this needes at least libxml2.2.7.8  
         $images = $dom->getElementsByTagName('img');
         foreach($images as $k => $img){
             $data = $img->getAttribute('src');
@@ -68,12 +69,16 @@ class PostController extends Controller
                 $img->setAttribute('src', $image_name);
             }
         }        
+        //save        
         $body = $dom->saveHTML();
 
         //$post = Post::create($request->only('title', 'body'));
         $post = new Post;
         $post->title = $title;
         $post->body  = $body;
+        //purify the user input 
+        $post->body = Purifier::clean($post->body);
+        //save to db
         $post->save();
 
         //Display a successful message upon save
@@ -147,10 +152,26 @@ class PostController extends Controller
                 $img->removeAttribute('src');
                 $img->setAttribute('src', $image_name);
             }
-        }        
+        }
+        /* 
+        //example for howto remove all script from user input    
+        $scripts = $dom->getElementsByTagName('script');    
+        $remove = [];
+        foreach($scripts as $item)
+        {
+          $remove[] = $item;
+        }
+
+        foreach ($remove as $item2)
+        {
+          $item2->parentNode->removeChild($item2); 
+        }
+        */
         $post->body = $dom->saveHTML();
         $post->body = mb_convert_encoding($post->body, 'UTF-8' , 'HTML-ENTITIES');
-
+        //purify the user input 
+        $post->body = Purifier::clean($post->body);
+        //save
         $post->save();
 
         return redirect()->route('posts.show',

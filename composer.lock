@@ -4,8 +4,63 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "1f715f1b69f2d16ed034b4c799f825fe",
+    "content-hash": "42604b01b1b784a81ee3dec0ea58cacd",
     "packages": [
+        {
+            "name": "alexusmai/laravel-purifier",
+            "version": "0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/alexusmai/laravel-purifier.git",
+                "reference": "2491606ee1431940b81cb8d08e7944b40ecf1344"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/alexusmai/laravel-purifier/zipball/2491606ee1431940b81cb8d08e7944b40ecf1344",
+                "reference": "2491606ee1431940b81cb8d08e7944b40ecf1344",
+                "shasum": ""
+            },
+            "require": {
+                "ezyang/htmlpurifier": "4.9.*",
+                "illuminate/support": "5.1.*|5.2.*|5.3.*|5.4.*|5.5.*",
+                "php": ">=5.6.4"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Alexusmai\\LaravelPurifier\\LaravelPurifierServiceProvider"
+                    ],
+                    "aliases": {
+                        "Purifier": "Alexusmai\\LaravelPurifier\\Facades\\PurifierFacade"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Alexusmai\\LaravelPurifier\\": "src/"
+                },
+                "files": [
+                    "src/helper.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Alex",
+                    "email": "alexusmai@gmail.com"
+                }
+            ],
+            "description": "HTML Purifier for Laravel 5",
+            "keywords": [
+                "Purifier",
+                "laravel"
+            ],
+            "time": "2017-09-20T13:17:02+00:00"
+        },
         {
             "name": "dnoegel/php-xdg-base-dir",
             "version": "0.1",
@@ -261,6 +316,53 @@
                 "parser"
             ],
             "time": "2017-11-14T20:44:03+00:00"
+        },
+        {
+            "name": "ezyang/htmlpurifier",
+            "version": "v4.9.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ezyang/htmlpurifier.git",
+                "reference": "95e1bae3182efc0f3422896a3236e991049dac69"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ezyang/htmlpurifier/zipball/95e1bae3182efc0f3422896a3236e991049dac69",
+                "reference": "95e1bae3182efc0f3422896a3236e991049dac69",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.2"
+            },
+            "require-dev": {
+                "simpletest/simpletest": "^1.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "HTMLPurifier": "library/"
+                },
+                "files": [
+                    "library/HTMLPurifier.composer.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL"
+            ],
+            "authors": [
+                {
+                    "name": "Edward Z. Yang",
+                    "email": "admin@htmlpurifier.org",
+                    "homepage": "http://ezyang.com"
+                }
+            ],
+            "description": "Standards compliant HTML filter written in PHP",
+            "homepage": "http://htmlpurifier.org/",
+            "keywords": [
+                "html"
+            ],
+            "time": "2017-06-03T02:28:16+00:00"
         },
         {
             "name": "fideloper/proxy",

@@ -5,12 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <meta name="author" content="Ev173.com">
+    <meta name="author" content="D1.xyz">
     <link rel="icon" href="/favicon.ico">
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta http-equiv='Content-Type' content='text/html; charset=utf-8' /> 
-    <title>Ev173.com</title>
+    <title>D1.xyz</title>
 
     <!-- Bootstrap core CSS -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
@@ -20,6 +20,8 @@
 
     <!-- Custom styles for this template -->
     <link href="/css/blog.css" rel="stylesheet">
+    <!-- include summernote css/js-->
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.8/summernote.css" rel="stylesheet">
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="/js/ie8-responsive-file-warning.js"></script><![endif]-->
@@ -37,14 +39,10 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="/js/jquery.min.js"><\/script>')</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="/js/ie10-viewport-bug-workaround.js"></script>
-    <script src="https://use.fontawesome.com/9712be8772.js"></script>
-    <!-- include summernote css/js-->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.8/summernote.css" rel="stylesheet">
+    <script src="https://use.fontawesome.com/5cefe55d68.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.8/summernote.js"></script>
   </head>
 
@@ -55,32 +53,12 @@
             <div class="blog-masthead navbar-fixed-top">
               <div class="container-fluid">
                 <div class="navbar-header">
-                  <a class="nav-brand" href="/">Ev173<sub><small>.com</small></sub></a>
+                  <a class="nav-brand" href="/">D1<sub><small>.xyz</small></sub></a>
                 </div>
                 <nav class="blog-nav">
-                  <a class="blog-nav-item active" href="/"><i class="fa fa-home fa-lg" aria-hidden="true"></i> 首页</a>
-                  <a class="blog-nav-item" href="#"><i class="fa fa-newspaper-o" aria-hidden="true"></i> 资讯</a>
-                  <a class="blog-nav-item" href="#"><i class="fa fa-car" aria-hidden="true"></i> 车型</a>
-                  <a class="blog-nav-item" href="#"><i class="fa fa-flag" aria-hidden="true"></i> 厂商</a>
-                  <a class="blog-nav-item" href="#"><i class="fa fa-comments" aria-hidden="true"></i> 论坛</a>
-                  <a class="blog-nav-item" href="#"><i class="fa fa-info" aria-hidden="true"></i> 关于</a>
-                  <div class="blog-nav-item-right">
-                        <!-- Authentication Links -->
-                        @if (Auth::guest())
-                            <a class="blog-nav-item" href="{{ route('login') }}">Login</a>
-                            <a class="blog-nav-item" href="{{ route('register') }}">Register</a>
-                        @else
-                            <i class="fa fa-user-circle" aria-hidden="true"></i>  {{ Auth::user()->name }}  
-
-                            <a class="blog-nav-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                            (Logout)
-                            </a>
-
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                            {{ csrf_field() }}
-                            </form>
-                        @endif
-                    </div>
+                  <a class="blog-nav-item active" href="/"><i class="fa fa-home fa-lg" aria-hidden="true"></i> Home</a>
+                  <a class="blog-nav-item" href="/posts/create"><i class="fa fa-plus" aria-hidden="true"></i> Add New Post</a>
+                  <a class="blog-nav-item" href="#"><i class="fa fa-superpowers" aria-hidden="true"></i> About</a>
                 </nav>        
               </div>        
             </div>
@@ -106,7 +84,7 @@
         </div> <!-- /.row -->
     </div><!-- /.container -->
     <footer class="blog-footer">
-      <p>Blog template built for <a href="http://getbootstrap.com">Bootstrap</a> by <a href="https://twitter.com/mdo">@mdo</a>.</p>
+      <p><a href="/">Home</a> | <a href="/posts/create">Create New Post</a> | <a href="">About</a> </p>
       <p>
         <a href="#">Back to top</a>
       </p>

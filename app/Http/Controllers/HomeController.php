@@ -25,4 +25,14 @@ class HomeController extends Controller
     {
         return view('home');
     }
+    /**
+     * Show the application terms and conditions.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function terms()
+    {
+        return view('terms');
+    }
+
 }
