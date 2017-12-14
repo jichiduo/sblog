@@ -19,7 +19,7 @@ class PostController extends Controller
     public function index()
     {
         //
-        $posts = Post::orderby('id', 'desc')->paginate(5); //show only 5 items at a time in descending order
+        $posts = Post::orderby('id', 'desc')->paginate(15); //show only 15 items at a time in descending order
 
         return view('posts.index', compact('posts'));
     }
@@ -49,6 +49,8 @@ class PostController extends Controller
             'body'  => 'required',
         ]);
 
+        $author = $request['author'];
+        $email = $request['email'];
         $title = $request['title'];
         $body  = CloseTags($request['body']);
         //save img
@@ -76,7 +78,12 @@ class PostController extends Controller
         $post = new Post;
         $post->title = $title;
         $post->body  = $body;
+        $post->author = $author;
+        $post->email = $email;
         //purify the user input 
+        //$post->author = Purifier::clean($post->author);
+        //$post->email = Purifier::clean($post->email);
+        //$post->title = Purifier::clean($post->title);
         $post->body = Purifier::clean($post->body);
         //save to db
         $post->save();
@@ -133,7 +140,9 @@ class PostController extends Controller
         $post        = Post::findOrFail($id);
         $post->title = $request->input('title');
         $post->body  = $request->input('body');
-        $body = CloseTags($post->body);
+        $post->author  = $request->input('author');
+        $post->email  = $request->input('email');
+        $body = $post->body;
         //save img
         $dom = new \DomDocument();
         libxml_use_internal_errors(true); //supress the warning of loadHtml https://stackoverflow.com/questions/11819603/dom-loadhtml-doesnt-work-properly-on-a-server
@@ -170,6 +179,9 @@ class PostController extends Controller
         $post->body = $dom->saveHTML();
         $post->body = mb_convert_encoding($post->body, 'UTF-8' , 'HTML-ENTITIES');
         //purify the user input 
+        //$post->author = Purifier::clean($post->author);
+        //$post->email = Purifier::clean($post->email);
+        //$post->title = Purifier::clean($post->title);
         $post->body = Purifier::clean($post->body);
         //save
         $post->save();

@@ -1,16 +1,13 @@
 @extends('layouts.app')
 @section('content')
-    <div class="col-md-8 blog-main">
+    <div class="col-md-8">
         @foreach ($posts as $post)
-                <h2><a href="{{ route('posts.show', $post->id ) }}"><b>{{ $post->title }}</b><br></a></h2>
-                <p class="teaser">
-                   {!!  CloseTags(str_limit($post->body,800)) !!} {{-- Limit teaser to 400 characters --}}
-                </p>
-                <hr />
+            <h3><a href="{{ route('posts.show', $post->id ) }}"><b>{{ $post->title }}</b><br></a></h3>
+            <p class="blog-post-meta">by <a href="mailto:{{$post->email}}">{{$post->author}}</a> | {{$post->created_at->diffForHumans()}} | <a href="https://www.google.com/search?q={{$post->title}}">web</a> </p>
         @endforeach
-    </div>
-    <div class="text-center">
-        {!! $posts->links() !!}
+        <div class="text-center">
+            {{ $posts->links() }}
+        </div>
     </div>
     @include ('sidebar')
 @endsection

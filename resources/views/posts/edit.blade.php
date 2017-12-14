@@ -5,6 +5,8 @@
         <hr> {{ Form::model($post, array('route' => array('posts.update', $post->id), 'method' => 'PUT')) }}
         <div class="form-group">
             {{ Form::label('title', 'Title') }} {{ Form::text('title', null, array('class' => 'form-control')) }}
+            <br> {{ Form::label('author', 'Author') }} {{ Form::text('author', null, array('class' => 'form-control')) }}
+            <br> {{ Form::label('email', 'Email') }} {{ Form::text('email', null, array('class' => 'form-control')) }}
             <br> {{ Form::label('body', 'Post Body') }} {{ Form::textarea('body', null, array('class' => 'form-control', 'id' => 'post_body')) }}
             <br> {{ Form::submit('Save', array('class' => 'btn btn-primary')) }} {{ Form::close() }}
         </div>

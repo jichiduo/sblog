@@ -57,7 +57,7 @@
                 </div>
                 <nav class="blog-nav">
                   <a class="blog-nav-item active" href="/"><i class="fa fa-home fa-lg" aria-hidden="true"></i> Home</a>
-                  <a class="blog-nav-item" href="/posts/create"><i class="fa fa-plus" aria-hidden="true"></i> Add New Post</a>
+                  <a class="blog-nav-item" href="/posts/create"><i class="fa fa-plus" aria-hidden="true"></i> New!</a>
                   <a class="blog-nav-item" href="/about"><i class="fa fa-superpowers" aria-hidden="true"></i> About</a>
                 </nav>        
               </div>        
@@ -84,7 +84,7 @@
         </div> <!-- /.row -->
     </div><!-- /.container -->
     <footer class="blog-footer">
-      <p><a href="/">Home</a> | <a href="/posts/create">Create New Post</a> | <a href="/about">About</a> </p>
+      <p><a href="/">Home</a> | <a href="/posts/create">New!</a> | <a href="/about">About</a> </p>
       <p>
         <a href="#">Back to top</a>
       </p>
