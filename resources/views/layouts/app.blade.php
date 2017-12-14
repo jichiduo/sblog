@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <meta name="author" content="D1.xyz">
+    <meta name="author" content="Ev173.com">
     <link rel="icon" href="/favicon.ico">
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -53,7 +53,7 @@
             <div class="blog-masthead navbar-fixed-top">
               <div class="container-fluid">
                 <div class="navbar-header">
-                  <a class="nav-brand" href="/">D1<sub><small>.xyz</small></sub></a>
+                  <a class="nav-brand" href="/">Ev173<sub><small>.com</small></sub></a>
                 </div>
                 <nav class="blog-nav">
                   <a class="blog-nav-item active" href="/"><i class="fa fa-home fa-lg" aria-hidden="true"></i> Home</a>
