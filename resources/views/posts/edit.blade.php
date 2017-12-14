@@ -7,7 +7,7 @@
             {{ Form::label('title', 'Title') }} {{ Form::text('title', null, array('class' => 'form-control')) }}
             <br> {{ Form::label('author', 'Author') }} {{ Form::text('author', null, array('class' => 'form-control')) }}
             <br> {{ Form::label('email', 'Email') }} {{ Form::text('email', null, array('class' => 'form-control')) }}
-            <br> {{ Form::label('body', 'Post Body') }} {{ Form::textarea('body', null, array('class' => 'form-control', 'id' => 'post_body')) }}
+            <br> {{ Form::label('body', 'Content') }} {{ Form::textarea('body', null, array('class' => 'form-control', 'id' => 'post_body')) }}
             <br> {{ Form::submit('Save', array('class' => 'btn btn-primary')) }} {{ Form::close() }}
         </div>
     </div>
@@ -24,7 +24,7 @@ $(document).ready(function() {
             ['color', ['color']],
             ['para', ['ul', 'ol', 'paragraph']],
             ['height', ['height']],
-            ['insert', ['link', 'picture', 'video','hr']],
+            ['insert', ['link', 'picture','hr']],
         ],
         popover: {
             image: [

@@ -23,7 +23,7 @@
             {{ Form::text('email', null, array('class' => 'form-control')) }}
             <br>
 
-            {{ Form::label('body', 'Post Body') }}
+            {{ Form::label('body', 'Content') }}
             {{ Form::textarea('body', null, array('class' => 'form-control' , 'id' => 'post_body')) }}
             <br>
 
@@ -44,7 +44,7 @@ $(document).ready(function() {
             ['color', ['color']],
             ['para', ['ul', 'ol', 'paragraph']],
             ['height', ['height']],
-            ['insert', ['link', 'picture', 'video','hr']],
+            ['insert', ['link', 'picture','hr']],
         ],
         popover: {
             image: [

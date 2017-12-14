@@ -7,7 +7,7 @@
 <div class="col-md-8 blog-main">
 
   <div class="blog-post">
-    <h2 class="blog-post-title">{{ $post->title }}</h2>
+    <h3 class="blog-post-title">{{ $post->title }}</h3>
     <p class="blog-post-meta">by <a href="mailto:{{$post->email}}">{{$post->author}}</a>  {{$post->created_at->diffForHumans()}}  </p>
 
     <hr>
