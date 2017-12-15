@@ -26,3 +26,5 @@ Route::resource('posts', 'PostController');
 
 Route::get('/terms','HomeController@terms');
 Route::get('/about','HomeController@about');
+
+Route::get('/gen','HomeController@gen');

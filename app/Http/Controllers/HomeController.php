@@ -2,8 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
 class HomeController extends Controller
 {
     /**
@@ -42,5 +40,20 @@ class HomeController extends Controller
     public function about()
     {
         return view('about');
+    }
+    /**
+     * Show the application about page.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function gen()
+    {
+        $d_a = array();
+        $d_b = array();
+        for($i=0;$i<100;$i++){
+            $d_a[] = rand(11,99);
+            $d_b[] = rand(11,99);
+        }
+        return view('generator\index')->with('d_a', $d_a)->with('d_b',$d_b);
     }
 }

@@ -48,24 +48,6 @@
 
 <body>
     <div class="container">
-        <div class="row">
-            <!-- Fixed navbar -->
-            <div class="blog-masthead navbar-fixed-top">
-              <div class="container-fluid">
-                <div class="navbar-header">
-                  <a class="nav-brand" href="/">Ev173<sub><small>.com</small></sub></a>
-                </div>
-                <nav class="blog-nav">
-                  <a class="blog-nav-item active" href="/"><i class="fa fa-home fa-lg" aria-hidden="true"></i> Home</a>
-                  <a class="blog-nav-item" href="/posts/create"><i class="fa fa-plus" aria-hidden="true"></i> New!</a>
-                  <a class="blog-nav-item" href="/gen"><i class="fa fa-calculator" aria-hidden="true"></i> 2-Digi multiplication Generator</a>
-                  <a class="blog-nav-item" href="/about"><i class="fa fa-superpowers" aria-hidden="true"></i> About</a>
-                </nav>        
-              </div>        
-            </div>
-        </div>
-    </div>
-    <div class="container">
         <div class="blog-header"></div><!-- /.just add padding to the top -->
         @if(Session::has('flash_message'))
             <div class="container">      
@@ -84,12 +66,5 @@
             @yield('content')
         </div> <!-- /.row -->
     </div><!-- /.container -->
-    <footer class="blog-footer">
-      <p><a href="/">Home</a> | <a href="/posts/create">New!</a> | <a href="/about">About</a> </p>
-      <p>
-        <a href="#">Back to top</a>
-      </p>
-    </footer>
-
 </body>
 </html>
