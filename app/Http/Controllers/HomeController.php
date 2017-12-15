@@ -54,6 +54,6 @@ class HomeController extends Controller
             $d_a[] = rand(11,99);
             $d_b[] = rand(11,99);
         }
-        return view('generator\index')->with('d_a', $d_a)->with('d_b',$d_b);
+        return view('generator.index')->with('d_a', $d_a)->with('d_b',$d_b);
     }
 }
