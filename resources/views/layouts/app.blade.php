@@ -47,7 +47,7 @@
   </head>
 
 <body>
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
             <!-- Fixed navbar -->
             <div class="blog-masthead navbar-fixed-top">
@@ -65,7 +65,7 @@
             </div>
         </div>
     </div>
-    <div class="container">
+    <div class="container-fluid">
         <div class="blog-header"></div><!-- /.just add padding to the top -->
         @if(Session::has('flash_message'))
             <div class="container">      

@@ -4,7 +4,7 @@
 
 @section('content')
 
-<div class="col-md-8 blog-main">
+<div class="col-md-9">
 
   <div class="blog-post">
     <h3>{{ $post->title }}</h3>
