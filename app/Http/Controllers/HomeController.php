@@ -50,10 +50,11 @@ class HomeController extends Controller
     {
         $d_a = array();
         $d_b = array();
-        for($i=0;$i<100;$i++){
+        $token = 120;
+        for($i=0;$i<$token;$i++){
             $d_a[] = rand(11,99);
             $d_b[] = rand(11,99);
         }
-        return view('generator.index')->with('d_a', $d_a)->with('d_b',$d_b);
+        return view('generator.index')->with('d_a', $d_a)->with('d_b',$d_b)->with('token',$token);
     }
 }
