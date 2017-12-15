@@ -9,7 +9,7 @@ class PostController extends Controller
 {
     public function __construct()
     {
-        $this->middleware(['auth', 'clearance'])->except('index', 'show' , 'create');
+        $this->middleware(['auth', 'clearance'])->except('index', 'show' , 'create','store');
     }
     /**
      * Display a listing of the resource.
